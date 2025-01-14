@@ -1,7 +1,7 @@
 <?php
     try {
         $host = "localhost";
-        $dbname = "DB_NAME";
+        $dbname = "projet_elie";
         $dbuser = "root";
         $dbpassword = "";
         $db = new PDO("mysql:host=$host;dbname=$dbname", $dbuser, $dbpassword);
