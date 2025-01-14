@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 14 jan. 2025 à 15:12
+-- Généré le : mar. 14 jan. 2025 à 15:47
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `date_ajout` datetime NOT NULL,
   `id_modele` int NOT NULL,
   `id_utilisateur` int NOT NULL,
+  `stock` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_article`),
   UNIQUE KEY `Nom_article` (`nom_article`),
   UNIQUE KEY `No série` (`no_serie`),
@@ -104,8 +105,9 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `numero_telephone` int NOT NULL,
   `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `adresse` varchar(20) NOT NULL,
   `ville` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `code_postal` int NOT NULL,
+  `code_postal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `date_inscription` datetime NOT NULL,
   `id_role` int NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
