@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 14 jan. 2025 à 10:31
+-- Généré le : mar. 14 jan. 2025 à 15:12
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -99,10 +99,13 @@ CREATE TABLE IF NOT EXISTS `roles` (
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id_utilisateur` int NOT NULL AUTO_INCREMENT,
+  `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `nom_utilisateur` varchar(20) NOT NULL,
   `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `numero_telephone` int NOT NULL,
   `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `ville` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `code_postal` int NOT NULL,
   `date_inscription` datetime NOT NULL,
   `id_role` int NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
