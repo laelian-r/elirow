@@ -51,13 +51,11 @@ if (isset($_GET['id'])) {
                 <hr>
     
                 <div class="infos">
-                    <div class="qte">
-                        <label for="qte' . $article['id_article'] . '">Quantité : </label>
-                        <input type="number" name="qte" id="qte' . $article['id_article'] . '" value="1" min="1" max="' . $article['stock_restant'] . '">
+                    <div class="prix-container">
+                        <p>Prix de comparaison : </p>
+                        <p class="base">' . $article['prix_comparaison'] . '€</p>
+                        <p class="prix">' . $article['prix'] . '€</p>
                     </div>
-    
-                
-                    <p>Prix : ' . $article['prix'] . '€</p>
         ';
 
         if ($article['stock'] == 1) {
@@ -67,6 +65,11 @@ if (isset($_GET['id'])) {
         }
 
         echo '          
+
+                        <div class="qte">
+                            <label for="qte' . $article['id_article'] . '">Quantité : </label>
+                            <input type="number" name="qte" id="qte' . $article['id_article'] . '" value="1" min="1" max="' . $article['stock_restant'] . '">
+                        </div>
                         <input type="submit" value="Ajouter au panier">
                     </div>
                 </main>

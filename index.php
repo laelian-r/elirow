@@ -21,7 +21,7 @@
             <?php
             while ($i = $result->fetch()) {
                 echo '
-                    <form method="post" enctype="multipart/form-data">
+                    <form action="article.php?id=' . $i['id_article'] . '" method="post" enctype="multipart/form-data">
                         <div class="img">
                             <img src="./assets/images/' . $i['image_article'] . '">
                         </div>
@@ -34,23 +34,27 @@
                             <hr>
                 
                             <div class="infos">
-                                <div class="qte">
+                                <!-- <div class="qte">
                                     <label for="qte' . $i['id_article'] . '">Quantité : </label>
                                     <input type="number" name="qte" id="qte' . $i['id_article'] . '" value="1" min="1" max="' . $i['stock_restant'] . '">
-                                </div>
+                                </div> --->
                 
                             
-                                <p>Prix : ' . $i['prix'] . '€</p>
+                                <div class="prix-container">
+                                    <p>Prix de comparaison : </p>
+                                    <p class="base">' . $i['prix_comparaison'] . '€</p>
+                                    <p class="prix">' . $i['prix'] . '€</p>
+                                </div>
                 ';
             
                 if ($i['stock'] == 1) {
-                    echo '<p>Stock: <span class="stock-true">En stock</span></p>';
+                    echo '<p>Stock : <span class="stock-true">En stock</span></p>';
                 } else {
-                    echo '<p>Stock: <span class="stock-false">Rupture de stock</span></p>';
+                    echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';
                 }
             
                 echo '          
-                                <input type="submit" value="Ajouter au panier">
+                                <input type="submit" value="Voir plus">
                             </div>
                         </main>
                     </form>
