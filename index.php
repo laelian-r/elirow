@@ -25,15 +25,22 @@
                         <div class="img">
                             <img src="./assets/images/' . $i['image_article'] . '">
                         </div>
-                        <hr>
                         <main>
-                            <h2>' . $i['nom_article'] . '</h2>
-                            <p>' . $i['description'] . '</p>
+                            <div class="titre-desc">
+                                <a href="article.php?id=' . $i['id_article'] . '"><h2>' . $i['nom_article'] . '</h2></a>
+                                <p class="description">' . nl2br($i['description']) . '</p>
+                            </div>
+
+                            <hr>
                 
-                            <label for="qte">Quantité : </label>
-                            <input type="number" name="qte" id="qte" value="1" min="1" max="' . $i['stock_restant'] . '">
+                            <div class="infos">
+                                <div class="qte">
+                                    <label for="qte' . $i['id_article'] . '">Quantité : </label>
+                                    <input type="number" name="qte" id="qte' . $i['id_article'] . '" value="1" min="1" max="' . $i['stock_restant'] . '">
+                                </div>
                 
-                            <p>Prix : ' . $i['prix'] . '€</p>
+                            
+                                <p>Prix : ' . $i['prix'] . '€</p>
                 ';
             
                 if ($i['stock'] == 1) {
@@ -42,8 +49,9 @@
                     echo '<p>Stock: <span class="stock-false">Rupture de stock</span></p>';
                 }
             
-                echo '
-                            <input type="submit" value="Acheter">
+                echo '          
+                                <input type="submit" value="Ajouter au panier">
+                            </div>
                         </main>
                     </form>
                 ';
