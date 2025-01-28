@@ -120,3 +120,8 @@ form input[type="submit"] {
     cursor: pointer;
     margin-top: 1rem;
 }
+
+.article {
+    height: 100%;
+    width: 100%;
+}

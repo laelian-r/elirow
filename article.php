@@ -1,38 +1,79 @@
 <?php
+// Inclure la connexion à la base de données
 include 'db_connect.php';
-$sql = "
-    SELECT * FROM articles
-";
-$result = $db->query($sql);
 
-if ($result->rowCount() > 0) {
-    // Fetch the first article
-    $article = $result->fetch(PDO::FETCH_ASSOC);
+// Vérifier si un ID est passé en paramètre et s'il est valide
+if (isset($_GET['id'])) {
+    $id_article = $_GET['id'];
+
+    // Préparer une requête SQL sécurisée
+    $sql = "SELECT * FROM articles WHERE id_article = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$id_article]);
+
+    // Récupérer l'article
+    $article = $stmt->fetch();
+
+    // Vérifier si l'article existe
+    if (!$article) {
+        echo "<p>Article introuvable.</p>";
+        exit;
+    }
 } else {
-    echo "Aucun article trouvé.";
+    echo "<p>ID invalide.</p>";
     exit;
 }
+?>
 
-echo '
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>' . $article['nom_article'] . '</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
-    <body>
-        <section>
-            <form method="post" enctype="multipart/form-data">
-                <div class="img">
-                    <img src="./assets/images/' . $article['image_article'] . '">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($article['nom_article']); ?></title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <section>
+        <?php
+        echo '
+        <form class="article" method="post" enctype="multipart/form-data">
+            <div class="img">
+                <img src="./assets/images/' . $article['image_article'] . '">
+            </div>
+            <main>
+                <div class="titre-desc">
+                    <h2>' . $article['nom_article'] . '</h2>
+                    <p class="description">' . nl2br($article['description']) . '</p>
                 </div>
-                <main>
-                    <div class="titre-desc">
-                        <h2>' . $article['nom_article'] . '</h2>
-                        <p class="description">' . nl2br($article['description']) . '</p>
+
+                <hr>
+    
+                <div class="infos">
+                    <div class="qte">
+                        <label for="qte' . $article['id_article'] . '">Quantité : </label>
+                        <input type="number" name="qte" id="qte' . $article['id_article'] . '" value="1" min="1" max="' . $article['stock_restant'] . '">
+                    </div>
+    
+                
+                    <p>Prix : ' . $article['prix'] . '€</p>
+        ';
+
+        if ($article['stock'] == 1) {
+            echo '<p>Stock: <span class="stock-true">En stock</span></p>';
+        } else {
+            echo '<p>Stock: <span class="stock-false">Rupture de stock</span></p>';
+        }
+
+        echo '          
+                        <input type="submit" value="Ajouter au panier">
                     </div>
                 </main>
             </form>
-        </section>
-    </body>
-';
+        ';
+        ?>
+    </section>
+
+</body>
+</html>
