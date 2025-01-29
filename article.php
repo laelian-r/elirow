@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
         <?php
         echo '
         <form class="article" method="post" enctype="multipart/form-data">
-            <div class="img">
+            <div class="img2">
                 <img src="./assets/images/' . $article['image_article'] . '">
             </div>
             <main>
@@ -59,9 +59,9 @@ if (isset($_GET['id'])) {
         ';
 
         if ($article['stock'] == 1) {
-            echo '<p>Stock: <span class="stock-true">En stock</span></p>';
+            echo '<p>Stock : <span class="stock-true">En stock</span></p>';
         } else {
-            echo '<p>Stock: <span class="stock-false">Rupture de stock</span></p>';
+            echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';
         }
 
         echo '          
