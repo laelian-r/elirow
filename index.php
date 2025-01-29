@@ -36,7 +36,7 @@
                             <div class="infos">
                                 <!-- <div class="qte">
                                     <label for="qte' . $i['id_article'] . '">Quantité : </label>
-                                    <input type="number" name="qte" id="qte' . $i['id_article'] . '" value="1" min="1" max="' . $i['stock_restant'] . '">
+                                    <input type="number" name="qte" id="qte' . $i['id_article'] . '" value="1" min="1" max="' . $i['stock'] . '">
                                 </div> --->
                 
                             
@@ -47,7 +47,7 @@
                                 </div>
                 ';
             
-                if ($i['stock'] == 1) {
+                if ($i['stock'] >= 1) {
                     echo '<p>Stock : <span class="stock-true">En stock</span></p>';
                 } else {
                     echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';

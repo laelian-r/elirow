@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
                     </div>
         ';
 
-        if ($article['stock'] == 1) {
+        if ($article['stock'] >= 1) {
             echo '<p>Stock : <span class="stock-true">En stock</span></p>';
         } else {
             echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';
@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
 
                         <div class="qte">
                             <label for="qte' . $article['id_article'] . '">Quantité : </label>
-                            <input type="number" name="qte" id="qte' . $article['id_article'] . '" value="1" min="1" max="' . $article['stock_restant'] . '">
+                            <input type="number" name="qte" id="qte' . $article['id_article'] . '" value="1" min="1" max="' . $article['stock'] . '">
                         </div>
                         <input type="submit" value="Ajouter au panier">
                     </div>
