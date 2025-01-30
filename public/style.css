@@ -29,7 +29,7 @@ li {
     justify-content: center;
 }
 
-a {
+ul li a {
     text-decoration: none;
     color: white;
     display: flex;

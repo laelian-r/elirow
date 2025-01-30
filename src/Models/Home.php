@@ -7,8 +7,16 @@ class Home {
     private $image_article;
     private $nom_article;
     private $description;
+    // -------------------------
+    private $id_modele;     // |
+    // -------------------------
     private $prix;
     private $prix_comparaison;
+    // -------------------------
+    private $no_serie;       // |
+    private $date_ajout;     // |
+    private $id_utilisateur; // |
+    // -------------------------
     private $stock;
 
     public function getId() {
