@@ -8,7 +8,8 @@
 </head>
 <body>
     <?php
-        include 'db_connect.php';
+        include './components/db_connect.php';
+        include './components/navbar.php';
 
         $sql = "
             SELECT * FROM articles

@@ -12,6 +12,10 @@ body {
     background-color: #fafafa;
 }
 
+nav {
+    display: flex;
+}
+
 section {
     display: flex;
     flex-direction: column;

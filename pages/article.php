@@ -1,6 +1,7 @@
 <?php
 // Inclure la connexion à la base de données
-include '../db_connect.php';
+include '../components/db_connect.php';
+include '../components/navbar.php';
 
 // Vérifier si un ID est passé en paramètre et s'il est valide
 if (isset($_GET['id'])) {
