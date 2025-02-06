@@ -19,48 +19,40 @@
 
         <section>
             <?php
-            while ($i = $result->fetch()) {
-                echo '
-                    <form action="article.php?id=' . $i['id_article'] . '" method="post" enctype="multipart/form-data">
-                        <div class="img">
-                            <img src="./assets/images/' . $i['image_article'] . '">
+            while ($i = $result->fetch()):
+            ?>
+                <form action="./pages/article.php?id=<?= $i['id_article'] ?>" method="post" enctype="multipart/form-data">
+                    <div class="img">
+                        <img src="./assets/images/<?= $i['image_article'] ?>">
+                    </div>
+                    <main>
+                        <div class="titre-desc">
+                            <a href="article.php?id=<?= $i['id_article'] ?>"><h2><?= $i['nom_article'] ?></h2></a>
+                            <p class="description"><?= nl2br($i['description']) ?></p>
                         </div>
-                        <main>
-                            <div class="titre-desc">
-                                <a href="article.php?id=' . $i['id_article'] . '"><h2>' . $i['nom_article'] . '</h2></a>
-                                <p class="description">' . nl2br($i['description']) . '</p>
-                            </div>
 
-                            <hr>
+                        <hr>
                 
-                            <div class="infos">
-                                <!-- <div class="qte">
-                                    <label for="qte' . $i['id_article'] . '">Quantité : </label>
-                                    <input type="number" name="qte" id="qte' . $i['id_article'] . '" value="1" min="1" max="' . $i['stock'] . '">
-                                </div> --->
-                
-                            
-                                <div class="prix-container">
-                                    <p>Prix de comparaison : </p>
-                                    <p class="base">' . $i['prix_comparaison'] . '€</p>
-                                    <p class="prix">' . $i['prix'] . '€</p>
-                                </div>
-                ';
+                        <div class="infos">
+                            <div class="prix-container">
+                                <p>Prix de comparaison : </p>
+                                <p class="base"><?= $i['prix_comparaison'] ?>€</p>
+                                <p class="prix"><?= $i['prix'] ?>€</p>
+                            </div>
             
+                <?php
                 if ($i['stock'] >= 1) {
                     echo '<p>Stock : <span class="stock-true">En stock</span></p>';
                 } else {
                     echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';
                 }
-            
-                echo '          
-                                <input type="submit" value="Voir plus">
-                            </div>
-                        </main>
-                    </form>
-                ';
-            }
-            ?>
+                ?>
+                    
+                            <input type="submit" value="Voir plus">
+                        </div>
+                    </main>
+                </form>
+            <?php endwhile; ?>
         </section>
 </body>
 </html>
