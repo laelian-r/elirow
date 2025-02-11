@@ -14,5 +14,6 @@ ou téléchargez-le en utilisant [Ce lien](https://github.com/laelian-r/elirow/a
 ## Démarrage
 Pour lancer le projet il vous faudra un server local comme `Xampp`, `Wamp`, ou autre.
 Une fois le projet lancer, allez dans `phpMyAdmin` puis créez la base de donnée `elirow` puis cliquez sur `importer` et séléctionnez le fichier `elirow.sql` dans le dossier du projet.
+
 ## Auteur
 * **Laélian Roux** _alias_ [@laelian-r](https://github.com/laelian-r) ou [@lroux07](https://github.com/lroux07)
