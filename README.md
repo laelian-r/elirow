@@ -1,42 +1,18 @@
 # Titre du projet
-Description du projet
-
-## Pour commencer
-
-Entrez ici les instructions pour bien débuter avec votre projet...
+Ce projet est un site ecommerce (fictif) spécialisé dans la vente de materiel informatique.
 
 ### Pré-requis
-
-Ce qu'il est requis pour commencer avec votre projet...
-
-- Programme 1
-- Programme 2
-- etc...
+- HTML
+- CSS
+- PHP
+- Gestion de base de données
 
 ### Installation
-
-Les étapes pour installer votre programme....
-
-Dites ce qu'il faut faire...
-
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
-
-
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+Executez la commande ``git clone https://github.com/laelian-r/elirow.git`` pour copier le projet
+ou téléchargez-le en utilisant [Ce lien](https://github.com/laelian-r/elirow/archive/refs/heads/main.zip).
 
 ## Démarrage
-
-Dites comment faire pour lancer votre projet
-
-## Fabriqué avec
-
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
-
-_exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-
-## Auteurs
-Listez le(s) auteur(s) du projet ici !
-* **Jhon doe** _alias_ [@laelian-r](https://github.com/laelian-r)
-
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
+Pour lancer le projet il vous faudra un server local comme `Xampp`, `Wamp`, ou autre.
+Une fois le projet lancer, allez dans `phpMyAdmin` puis créez la base de donnée `elirow` puis cliquez sur `importer` et séléctionnez le fichier `elirow.sql` dans le dossier du projet.
+## Auteur
+* **Laélian Roux** _alias_ [@laelian-r](https://github.com/laelian-r) ou [@lroux07](https://github.com/lroux07)
