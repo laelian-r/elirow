@@ -240,9 +240,19 @@ form input[type="submit"] {
         justify-content: space-between;
     }
 
+    .img {
+        margin-right: 2rem;
+    }
+
     .img img {
         height: 100%;
         width: 100%;
+    }
+
+    .img-article {
+        height: 30%;
+        width: 30%;
+        margin-bottom: 2rem;
     }
 
     .infos {
