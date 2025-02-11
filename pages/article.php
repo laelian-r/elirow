@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
     <section>
         <form class="article" method="post" enctype="multipart/form-data">
             <div class="img2">
-                <img src="../assets/images/<?= $article['image_article'] ?>">
+                <img src="../assets/images/<?= $article['image_article'] ?>" class="img-article">
             </div>
             <main>
                 <div class="titre-desc">

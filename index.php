@@ -28,7 +28,7 @@
                     </div>
                     <main>
                         <div class="titre-desc">
-                            <a href="article.php?id=<?= $i['id_article'] ?>"><h2><?= $i['nom_article'] ?></h2></a>
+                            <a href="./pages/article.php?id=<?= $i['id_article'] ?>"><h2><?= $i['nom_article'] ?></h2></a>
                             <p class="description"><?= nl2br($i['description']) ?></p>
                         </div>
 
