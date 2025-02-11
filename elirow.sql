@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 INSERT INTO `articles` (`id_article`, `image_article`, `nom_article`, `description`, `id_modele`, `prix`, `prix_comparaison`, `no_serie`, `date_ajout`, `id_utilisateur`, `stock`) VALUES
 (1, 'ecran.png', 'Ecran PC - HP V27i - 27\" FHD - Dalle IPS - 5 ms - 60 Hz - HDMI / VGA', '* Type d\'affichageEcran LCD à rétroéclairage LED / matrice active TFT\n* InterfacesVGA, 3 x USB 3.2 Gen 1, HDMI\n* Résolution nativeFull HD (1080p) 1920 x 1080 à 60 Hz\n* Temps de réponse5 ms (gris-à-gris)', 1, 90, 150, '1', '2025-01-14 19:06:18', 2, 0),
 (4, 'clavier.png', 'Clavier gaming sans fil - ASUS - ROG AZOTH - RGB - N Key Rollover - Programmable', '* Clavier\n* InterfaceUSB 2.0, Bluetooth 5.1, RF 2.4GHz\n* Fonction de raccourcis clavierAll Keys Programmable\n* TechnologieSans fil', 1, 30, 50, '2', '2025-01-28 21:13:46', 2, 10),
-(5, 'carte-graphique.png', 'MSI - Carte Graphique - GeForce RTX™ 4060 VENTUS 2X NOIR 8G OC', '* Dimension199 x 120 x 41 mm\n* Type de busPCI Express® Gen 4 x 8\n* Horloge principale2505 MHz\n* Horloge boostée2490 MHz', 1, 324, 405, '3', '2025-02-11 10:14:53', 2, 1);
+(5, 'carte-graphique.png', 'MSI - Carte Graphique - GeForce RTX™ 4060 VENTUS 2X NOIR 8G OC', '* Dimension199 x 120 x 41 mm\n* Type de busPCI Express® Gen 4 x 8\n* Horloge principale2505 MHz\n* Horloge boostée2490 MHz', 1, 324, 405, '3', '2025-02-11 10:14:53', 2, 25);
 
 -- --------------------------------------------------------
 
