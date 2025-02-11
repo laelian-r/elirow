@@ -1,4 +1,4 @@
-# Titre du projet
+# Elirow
 Ce projet est un site ecommerce (fictif) spécialisé dans la vente de materiel informatique.
 
 ### Pré-requis
