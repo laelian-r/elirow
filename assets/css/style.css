@@ -13,7 +13,22 @@ body {
 }
 
 nav {
+    background-color: #005abb;
+    padding: 2rem;
+}
+
+nav ul {
     display: flex;
+    gap: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
 }
 
 section {
