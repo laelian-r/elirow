@@ -8,24 +8,24 @@
 </head>
 <body>
     <?php
+        session_start();
         include '../components/db_connect.php';
         include '../components/navbar.php';
     ?>
-
     <main class="form-container">
-        <form action="../index.php" method="post" class="auth-form">
+        <form action="./verif_register.php" method="post" class="auth-form" enctype="multipart/form-data">
             <h2>Inscription</h2>
 
             <label for="pseudo">Nom d'utilisateur</label>
-            <input type="text" name="pseudo" id="pseudo" required>
+            <input type="text" name="pseudo" id="pseudo" value="<?php if(isset($_SESSION['old'])){ echo $_SESSION['old']['pseudo'];} ?>">
 
             <label for="email">Addresse email</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email" value="<?php if(isset($_SESSION['old'])) { echo $_SESSION['old']['email'];} ?>">
 
             <label for="mdp">Mot de passe</label>
-            <input type="password" name="mdp" id="mdp" required>
+            <input type="password" name="mdp" id="mdp" value="<?php if(isset($_SESSION['old'])) { echo $_SESSION['old']['mdp'];} ?>">
 
-            <input type="submit" value="S'incrire">
+            <input type="submit" name="submit" value="S'incrire">
         </form>
     </main>
     

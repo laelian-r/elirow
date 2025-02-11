@@ -1,13 +1,13 @@
 <nav>
     <ul>
         <li>
-            <a href="/">Accueil</a>
+            <a href="../pages/index.php">Accueil</a>
         </li>
         <li>
-            <a href="/">Connexion</a>
+            <a href="../pages/login.php">Connexion</a>
         </li>
         <li>
-            <a href="/">Inscription</a>
+            <a href="../pages/register.php">Inscription</a>
         </li>
     </ul>
 </nav>

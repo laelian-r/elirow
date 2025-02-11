@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <?php
-        include './components/db_connect.php';
-        include './components/navbar.php';
+        include '../components/db_connect.php';
+        include '../components/navbar.php';
 
         $sql = "
             SELECT * FROM articles
@@ -22,9 +22,9 @@
             <?php
             while ($i = $result->fetch()):
             ?>
-                <form action="./pages/article.php?id=<?= $i['id_article'] ?>" method="post" enctype="multipart/form-data">
+                <form action="../pages/article.php?id=<?= $i['id_article'] ?>" method="post" enctype="multipart/form-data">
                     <div class="img">
-                        <img src="./assets/images/<?= $i['image_article'] ?>">
+                        <img src="../assets/images/<?= $i['image_article'] ?>">
                     </div>
                     <main>
                         <div class="titre-desc">
@@ -41,13 +41,13 @@
                                 <p class="prix"><?= $i['prix'] ?>€</p>
                             </div>
             
-                <?php
-                if ($i['stock'] >= 1) {
-                    echo '<p>Stock : <span class="stock-true">En stock</span></p>';
-                } else {
-                    echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';
-                }
-                ?>
+                            <?php
+                            if ($i['stock'] >= 1) {
+                                echo '<p>Stock : <span class="stock-true">En stock</span></p>';
+                            } else {
+                                echo '<p>Stock : <span class="stock-false">Rupture de stock</span></p>';
+                            }
+                            ?>
                     
                             <input type="submit" value="Voir plus">
                         </div>
