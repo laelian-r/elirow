@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 11 fév. 2025 à 10:19
+-- Généré le : mer. 12 fév. 2025 à 15:42
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -33,28 +33,29 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `image_article` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `nom_article` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `id_modele` int NOT NULL,
-  `prix` int NOT NULL,
+  `id_modele` int DEFAULT NULL,
+  `prix` int DEFAULT NULL,
   `prix_comparaison` int NOT NULL,
   `no_serie` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `date_ajout` datetime NOT NULL,
-  `id_utilisateur` int NOT NULL,
+  `id_utilisateur` int DEFAULT NULL,
   `stock` int NOT NULL,
   PRIMARY KEY (`id_article`),
   UNIQUE KEY `Nom_article` (`nom_article`),
   UNIQUE KEY `No série` (`no_serie`),
   KEY `id_modele` (`id_modele`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `articles`
 --
 
 INSERT INTO `articles` (`id_article`, `image_article`, `nom_article`, `description`, `id_modele`, `prix`, `prix_comparaison`, `no_serie`, `date_ajout`, `id_utilisateur`, `stock`) VALUES
-(1, 'ecran.png', 'Ecran PC - HP V27i - 27\" FHD - Dalle IPS - 5 ms - 60 Hz - HDMI / VGA', '* Type d\'affichageEcran LCD à rétroéclairage LED / matrice active TFT\n* InterfacesVGA, 3 x USB 3.2 Gen 1, HDMI\n* Résolution nativeFull HD (1080p) 1920 x 1080 à 60 Hz\n* Temps de réponse5 ms (gris-à-gris)', 1, 90, 150, '1', '2025-01-14 19:06:18', 2, 0),
-(4, 'clavier.png', 'Clavier gaming sans fil - ASUS - ROG AZOTH - RGB - N Key Rollover - Programmable', '* Clavier\n* InterfaceUSB 2.0, Bluetooth 5.1, RF 2.4GHz\n* Fonction de raccourcis clavierAll Keys Programmable\n* TechnologieSans fil', 1, 30, 50, '2', '2025-01-28 21:13:46', 2, 10),
-(5, 'carte-graphique.png', 'MSI - Carte Graphique - GeForce RTX™ 4060 VENTUS 2X NOIR 8G OC', '* Dimension199 x 120 x 41 mm\n* Type de busPCI Express® Gen 4 x 8\n* Horloge principale2505 MHz\n* Horloge boostée2490 MHz', 1, 324, 405, '3', '2025-02-11 10:14:53', 2, 25);
+(1, 'ecran.png', 'Ecran PC - HP V27i - 27\" FHD - Dalle IPS - 5 ms - 60 Hz - HDMI / VGA', '• Type d\'affichageEcran LCD à rétroéclairage LED / matrice active TFT\r\n• InterfacesVGA, 3 x USB 3.2 Gen 1, HDMI\r\n• Résolution nativeFull HD (1080p) 1920 x 1080 à 60 Hz\r\n• Temps de réponse5 ms (gris-à-gris)', NULL, 200, 250, '6b0f63bb6c', '0000-00-00 00:00:00', NULL, 0),
+(2, 'clavier.png', 'Clavier gaming sans fil - ASUS - ROG AZOTH - RGB - N Key Rollover - Programmable', '• Clavier\r\n• InterfaceUSB 2.0, Bluetooth 5.1, RF 2.4GHz\r\n• Fonction de raccourcis clavierAll Keys Programmable\r\n• TechnologieSans fil', NULL, 286, 357, 'c3600df836', '0000-00-00 00:00:00', NULL, 20),
+(3, 'carte-graphique.png', 'MSI - Carte Graphique - GeForce RTX™ 4060 VENTUS 2X NOIR 8G OC', '• Dimension199 x 120 x 41 mm\r\n• Type de busPCI Express® Gen 4 x 8\r\n• Horloge principale2505 MHz\r\n• Horloge boostée2490 MHz', NULL, 312, 390, 'b31f25814b', '0000-00-00 00:00:00', NULL, 25),
+(4, 'souris.png', 'Souris Gaming - Sans fil - LOGITECH G - Pro - Noir', '• Technologie de connectivitéSans fil\r\n• CouleurNoir\r\n• Poids80 g\r\n• Autonomie (max.)60 heures', NULL, 63, 79, '3021032828', '0000-00-00 00:00:00', NULL, 30);
 
 -- --------------------------------------------------------
 
@@ -128,26 +129,28 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id_utilisateur` int NOT NULL AUTO_INCREMENT,
   `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `nom_utilisateur` varchar(20) NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `numero_telephone` int NOT NULL,
+  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `adresse` varchar(20) NOT NULL,
+  `adresse` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `ville` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `code_postal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `date_inscription` datetime NOT NULL,
-  `id_role` int NOT NULL,
+  `id_role` int DEFAULT NULL,
   PRIMARY KEY (`id_utilisateur`),
   UNIQUE KEY `nom_utilisateur` (`nom_utilisateur`),
   UNIQUE KEY `Email` (`email`),
   KEY `id_role` (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id_utilisateur`, `image`, `nom_utilisateur`, `email`, `numero_telephone`, `password`, `adresse`, `ville`, `code_postal`, `date_inscription`, `id_role`) VALUES
-(2, NULL, 'Laélian', 'laelian.roux@gmail.c', 662720545, 'laelian', '85 rue Docteur Frapp', 'Villeurbanne', '69100', '2025-01-14 19:05:13', 1);
+INSERT INTO `utilisateurs` (`id_utilisateur`, `image`, `nom_utilisateur`, `numero_telephone`, `email`, `password`, `adresse`, `ville`, `code_postal`, `date_inscription`, `id_role`) VALUES
+(2, NULL, 'Laélian', 662720545, 'laelian.roux@gmail.c', 'laelian', '85 rue Docteur Frapp', 'Villeurbanne', '69100', '2025-01-14 19:05:13', 1),
+(17, 'Black Pearl cover.pn', 'Derow', 762720545, 'derow.beats92@gmail.', '1234', '146 Rue d\'Estienne d', 'Colombes', '92700', '0000-00-00 00:00:00', 2),
+(18, '12.jpg', 'John Doe', 601020304, 'johndoe@email.com', '1234', '123 Rue de la Paix', 'Paris', '75000', '0000-00-00 00:00:00', 2);
 
 --
 -- Contraintes pour les tables déchargées

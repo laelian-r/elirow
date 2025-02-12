@@ -9,5 +9,8 @@
         <li>
             <a href="../pages/register.php">Inscription</a>
         </li>
+        <li>
+            <a href="../pages/newArticle.php">Creer un article</a>
+        </li>
     </ul>
 </nav>
