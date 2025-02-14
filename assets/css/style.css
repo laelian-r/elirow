@@ -24,6 +24,8 @@ nav ul {
     display: flex;
     gap: 2rem;
     justify-content: space-between;
+    align-items: center;
+    height: 3rem;
 }
 
 a {
@@ -38,6 +40,19 @@ li {
 .links {
     display: flex;
     gap: 2rem;
+}
+
+.profile-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    object-fit: cover;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50px;
 }
 
 /* HOMEPAGE */

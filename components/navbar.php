@@ -48,8 +48,8 @@ if (isset($_SESSION['id_utilisateur'])) {
         </div>
 
         <?php if (isset($_SESSION['id_utilisateur']) && $image): ?>
-        <div class="profile-image">
-            <img src="..assets/profiles-images/<?php echo $image; ?>" alt="<?= $image; ?>">
+        <div class="profile-picture-container">
+            <img src="../assets/profile-pictures/<?php echo $image; ?>" alt="<?= $image; ?>" class="profile-picture">
         </div>
         <?php endif; ?>
     </ul>
