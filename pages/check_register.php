@@ -14,6 +14,8 @@ if (
     $city = trim($_POST['city']);
     $postal_code = trim($_POST['postal_code']);
 
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
     // Validation des champs
     if (empty($username) || strlen($username) < 3 || 
         empty($phone) || empty($email) || 

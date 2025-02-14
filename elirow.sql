@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 14 fév. 2025 à 14:01
+-- Généré le : ven. 14 fév. 2025 à 18:27
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -127,13 +127,13 @@ INSERT INTO `roles` (`id_role`, `role`) VALUES
 DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id_utilisateur` int NOT NULL AUTO_INCREMENT,
-  `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `nom_utilisateur` varchar(20) NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `nom_utilisateur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `numero_telephone` int NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `adresse` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `ville` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `adresse` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `ville` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `code_postal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `date_inscription` datetime NOT NULL,
   `id_role` int DEFAULT NULL,
@@ -141,16 +141,14 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   UNIQUE KEY `nom_utilisateur` (`nom_utilisateur`),
   UNIQUE KEY `Email` (`email`),
   KEY `id_role` (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id_utilisateur`, `image`, `nom_utilisateur`, `numero_telephone`, `email`, `password`, `adresse`, `ville`, `code_postal`, `date_inscription`, `id_role`) VALUES
-(2, NULL, 'Laélian', 662720545, 'laelian.roux@gmail.c', 'laelian', '85 rue Docteur Frapp', 'Villeurbanne', '69100', '2025-01-14 19:05:13', 1),
-(17, 'Black Pearl cover.pn', 'Derow', 762720545, 'derow.beats92@gmail.', '1234', '146 Rue d\'Estienne d', 'Colombes', '92700', '0000-00-00 00:00:00', 2),
-(18, '12.jpg', 'John Doe', 601020304, 'johndoe@email.com', '1234', '123 Rue de la Paix', 'Paris', '75000', '0000-00-00 00:00:00', 2);
+(1, NULL, 'Laélian', 662720545, 'laelian.roux@gmail.com', '$2y$10$SbIkfO9mpBczC', '85 Rue Dr Frappaz', 'Villeurbanne', '69100', '0000-00-00 00:00:00', 1);
 
 --
 -- Contraintes pour les tables déchargées
