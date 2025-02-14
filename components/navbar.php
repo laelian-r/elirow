@@ -3,43 +3,54 @@
 
 if (isset($_SESSION['id_utilisateur'])) {
     $user_id = $_SESSION['id_utilisateur'];
-    $query = "SELECT id_role FROM utilisateurs WHERE id_utilisateur = ?";
+    $query = "SELECT image, id_role FROM utilisateurs WHERE id_utilisateur = ?";
     $stmt = $db->prepare($query);
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
 
     if ($user) {
         $user_role = $user['id_role'];
+        $image = $user['image'];
     } else {
         $user_role = null; // Si l'utilisateur n'est pas trouvé
+        $image = null; // Si l'utilisateur n'est pas trouvé
     }
 } else {
     $user_role = null; // Si l'utilisateur n'est pas connecté
+    $image = null; // Si l'utilisateur n'est pas connecté
 }
 ?>
 
 <nav>
     <ul>
-        <li>
-            <a href="../pages/index.php">Accueil</a>
-        </li>
-        <?php if (!isset($_SESSION['id_utilisateur'])): ?>
-        <li>
-            <a href="../pages/login.php">Connexion</a>
-        </li>
-        <li>
-            <a href="../pages/register.php">Inscription</a>
-        </li>
-        <?php else: ?>
-        <li>
-            <a href="../pages/logout.php">Déconnexion</a>
-        </li>
-        <?php endif; ?>
+        <div class="links">
+            <li>
+                <a href="../pages/index.php">Accueil</a>
+            </li>
+            <?php if (!isset($_SESSION['id_utilisateur'])): ?>
+            <li>
+                <a href="../pages/login.php">Connexion</a>
+            </li>
+            <li>
+                <a href="../pages/register.php">Inscription</a>
+            </li>
+            <?php else: ?>
+            <li>
+                <a href="../pages/logout.php">Déconnexion</a>
+            </li>
+        
+            <?php if (isset($_SESSION['id_utilisateur']) && $user_role == 1): ?>
+            <li>
+                <a href="../pages/newArticle.php">Nouvel article</a>
+            </li>
+            <?php endif; ?>
+            <?php endif; ?>
+        </div>
 
-        <?php if (isset($_SESSION['id_utilisateur']) && $user_role == 1): ?>
-        <li>
-            <a href="../pages/newArticle.php">Nouvel article</a>
-        </li>
+        <?php if (isset($_SESSION['id_utilisateur']) && $image): ?>
+        <div class="profile-image">
+            <img src="..assets/profiles-images/<?php echo $image; ?>" alt="<?= $image; ?>">
+        </div>
         <?php endif; ?>
     </ul>
 </nav>

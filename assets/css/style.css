@@ -23,6 +23,7 @@ nav {
 nav ul {
     display: flex;
     gap: 2rem;
+    justify-content: space-between;
 }
 
 a {
@@ -32,6 +33,11 @@ a {
 
 li {
     list-style: none;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
 }
 
 /* HOMEPAGE */
