@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php
+    session_start();
         include '../components/db_connect.php';
         include '../components/navbar.php';
 
