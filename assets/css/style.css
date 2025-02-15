@@ -22,15 +22,17 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 2rem;
     justify-content: space-between;
     align-items: center;
-    height: 3rem;
+    height: 2rem;
 }
 
 a {
     text-decoration: none;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 li {
@@ -39,19 +41,62 @@ li {
 
 .links {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+}
+
+.link-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2b74c1;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    gap: 1.5rem;
+}
+
+.link-icon-container:hover {
+    border-radius: 10px 10px 0 0;
+}
+
+i {
+    color: white;
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
 }
 
 .profile-picture-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2b74c1;
+  width: 100%;
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+}
+
+.dropdown-container:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .profile-picture {
     object-fit: cover;
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50px;
 }
 
@@ -110,8 +155,7 @@ form main {
     width: 70%;
 }
 
-/* Contenu principal = 60% (Texte + Infos) */
-main {
+.container-main {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -125,6 +169,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: center;
 }
 
 .titre-desc a {
@@ -168,7 +213,7 @@ main {
 }
 
 .stock-true {
-    color: rgba(0, 176, 0, 0.87);
+    color: rgba(31, 194, 29, 0.779);
     font-weight: 600;
 }
 
@@ -189,13 +234,41 @@ input[type="number"] {
 
 form input[type="submit"] {
     width: 100%;
-    background-color: #007bff;
+    background-color: #2b74c1;
     color: white;
     border: none;
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
+}
+
+button {
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.admin-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.edit {
+    background-color: rgba(31, 194, 29, 0.779) !important;
+}
+
+.delete {
+    background-color: red !important;
 }
 
 .article {
@@ -211,7 +284,7 @@ form input[type="submit"] {
     object-fit: contain;
 }
 
-.article main {
+.article .container-main {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;

@@ -1,5 +1,6 @@
 <?php
 // Inclure la connexion à la base de données
+session_start();
 include '../components/db_connect.php';
 include '../components/navbar.php';
 
@@ -37,11 +38,11 @@ if (isset($_GET['id'])) {
 <body>
 
     <section>
-        <form class="article" method="post" enctype="multipart/form-data">
+        <form action="./index.php" class="article" method="post" enctype="multipart/form-data">
             <div class="img2">
                 <img src="../assets/images/<?= $article['image_article'] ?>" class="img-article">
             </div>
-            <main>
+            <div class="container-main">
                 <div class="titre-desc">
                     <h2><?= $article['nom_article'] ?></h2>
                     <p class="description"><?= nl2br($article['description']) ?></p>
@@ -71,7 +72,7 @@ if (isset($_GET['id'])) {
                     </div>
                     <input type="submit" value="Ajouter au panier">
                 </div>
-            </main>
+            </div>
         </form>
     </section>
 

@@ -34,7 +34,7 @@
 
             <?php
             // Fonction pour générer un numéro de série aléatoire
-            function generateSerialNumber($length = 10) {
+            function generateSerialNumber($length = 20) {
                 return bin2hex(random_bytes($length / 2));
             }
 
