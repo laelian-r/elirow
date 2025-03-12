@@ -58,7 +58,7 @@ if (isset($_SESSION['id_utilisateur'])) {
             <?php endif; ?>
         </div>
 
-        <?php if (isset($_SESSION['id_utilisateur']) && $image): ?>
+        <?php if (isset($_SESSION['id_utilisateur'])): ?>
         <!-- <div class="profile-picture-container">
             <p><?= $username; ?></p>
             <img src="../assets/profile-pictures/<?php echo $image; ?>" alt="<?= $image; ?>" class="profile-picture">
@@ -66,7 +66,10 @@ if (isset($_SESSION['id_utilisateur'])) {
 
         <div class="dropdown-container">
             <div class="link-icon-container">
-                <p class="profile-picture-container"><img src="../assets/profile-pictures/<?php echo $image; ?>" alt="<?= $image; ?>" class="profile-picture"><?= $username; ?></p>
+                <div class="profile-picture-container">
+                    <img src="../assets/profile-pictures/<?= $image; ?>" alt="<?= $image; ?>" class="profile-picture">
+                    <p><?= $username; ?></p>
+                </div>
                 <i class="fa-solid fa-caret-down"></i>
             </div>
             <div class="dropdown-content">

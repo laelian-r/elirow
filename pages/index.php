@@ -73,8 +73,8 @@
                             <?php if (isset($_SESSION['id_utilisateur']) && $user_role == 1): ?>
                                 <!-- <hr> -->
                                 <div class="admin-btn">
-                                    <button class="edit"><i class="fa-solid fa-pen"></i>Modifier</button>
-                                    <button class="delete"><i class="fa-solid fa-trash"></i>Supprimer</button>
+                                    <a href="/test" class="edit edit-article"><i class="fa-solid fa-pen"></i>Modifier</a>
+                                    <a href="/test" class="delete edit-article"><i class="fa-solid fa-trash"></i>Supprimer</a>
                                 </div>
                             <?php endif ?>
                         </div>
