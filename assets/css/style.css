@@ -26,7 +26,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* height: 2rem; */
+    height: 4.5rem;
 }
 
 a {
@@ -233,16 +233,16 @@ form main {
 .prix {
     font-size: 2em;
     font-weight: bold;
-    color: red;
+    color: rgba(236, 0, 0, 0.863);
 }
 
 .stock-true {
-    color: rgba(31, 194, 29, 0.779);
+    color: rgba(26, 156, 24, 0.856);
     font-weight: 600;
 }
 
 .stock-false {
-    color: red;
+    color: rgba(236, 0, 0, 0.863);
     font-weight: 600;
 }
 
@@ -288,11 +288,11 @@ form input[type="submit"] {
 }
 
 .edit {
-    background-color: rgba(31, 194, 29, 0.779) !important;
+    background-color: rgba(26, 156, 24, 0.856) !important;
 }
 
 .delete {
-    background-color: red !important;
+    background-color: rgba(236, 0, 0, 0.863) !important;
 }
 
 .article {
